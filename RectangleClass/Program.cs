@@ -4,8 +4,8 @@ namespace RectangleClass
 {
     class Rectangle 
     {
-        public double slide1;
-        public double slide2;
+        private double slide1;
+        private double slide2;
         public Rectangle(){}
         public Rectangle(double slide1, double slide2)
         {
@@ -27,7 +27,18 @@ namespace RectangleClass
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Вас приветствует класс Rectangle!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Slide1 = "); double.TryParse(Console.ReadLine(), out double s1);
+            Console.Write("Slide2 = "); double.TryParse(Console.ReadLine(), out double s2);
+            Rectangle rec1 = new Rectangle(s1, s2);
+            rec1.AreaCalculator();
+            rec1.PerimeterCalculator();
+            Console.WriteLine($"Площадь вашего треуголника: {rec1.Area}");
+            Console.WriteLine($"Периметр вашего прямоугольника: {rec1.Perimeter}");
+
+
         }
     }
 }
